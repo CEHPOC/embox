@@ -1,0 +1,11 @@
+package embox.cmd
+
+@AutoCmd
+@Cmd(name = "hello_tflm", help="inference model")
+@BuildDepends(third_party.tflm.tflm)
+module hello_tflm {
+   source "model_data.c"
+   source "hello_tflm.c"
+
+   depends third_party.tflm.tflm
+}
